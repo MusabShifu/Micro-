@@ -1,78 +1,35 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.game-container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 80%;
-    max-width: 600px;
-}
-
-h1 {
-    color: #333;
-}
-
-.hidden {
-    display: none;
-}
-
-#feature {
-    font-size: 20px;
-    margin: 20px 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.options {
-    margin: 20px 0;
-}
-
-.option {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.option:hover {
-    background-color: #0056b3;
-}
-
-#result {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-#show-details {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-}
-
-#show-details:hover {
-    background-color: #218838;
-}
-
-#details-container {
-    margin-top: 20px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify Clinical Microbiology Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Identify the Microorganism</h1>
+        <div id="story-container">
+            <p id="feature"></p>
+            <button id="next-feature" onclick="nextFeature()">Reveal Next Feature</button>
+        </div>
+        <button id="show-question" class="hidden" onclick="showQuestion()">Show MCQ</button>
+        <div id="question-container" class="hidden">
+            <p id="question"></p>
+            <div class="options">
+                <button class="option" onclick="checkAnswer(this)">Gram-positive</button>
+                <button class="option" onclick="checkAnswer(this)">Gram-negative</button>
+                <button class="option" onclick="checkAnswer(this)">Non-motile</button>
+                <button class="option" onclick="checkAnswer(this)">Produces yellow pigment</button>
+            </div>
+        </div>
+        <div id="result" class="hidden"></div>
+        <button id="show-details" class="hidden" onclick="showDetails()">Show Organism Details</button>
+        <div id="details-container" class="hidden">
+            <h2>E. coli</h2>
+            <p>Escherichia coli (E. coli) is a Gram-negative, rod-shaped bacterium that is commonly found in the lower intestine of warm-blooded organisms. Most E. coli strains are harmless, but some can cause serious food poisoning in humans.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
